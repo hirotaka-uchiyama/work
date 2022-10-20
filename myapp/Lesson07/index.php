@@ -10,19 +10,43 @@ for ($a = 1; $a <= 9; $a++) {
 
 <?php
 $emp = ['中田' => ['age' => '23','pref' => '東京'], 
-        '山本' => ['age' => '19','pref' => '京都'], 
-        '佐藤' => ['age' => '30','pref' => '大阪'], 
-        '小林' => ['age' => '22','pref' => '福岡'] 
+    '山本' => ['age' => '19','pref' => '京都'], 
+    '佐藤' => ['age' => '30','pref' => '大阪'], 
+    '小林' => ['age' => '22','pref' => '福岡'] 
 ];
-foreach($emp as $key1 => $value1) {
-    echo "name".":".$key1.'<br/>';
-foreach ($value1 as $key2 => $value2) {
-    echo $key2. ":" .$value2.'</div>';
+$mep_a = [];
+foreach($emp as $key => $value) {
+    $emp_a[] = ['name' => $key, 'age' => $value['pref']];
 }
-}
+    print_r($emp_a);
+    echo "<br/>"
 ?>
 
 <?php
-for ($a = 1; $a <= 40; $a++) {
-    
+echo "3の倍数と3を含む数字<br>";
+$num_list =[];
+for ($num = 1 ; $num <= 40 ; $num++){
+    if ($num % 3 == 0){
+        $num_list[] = $num;
+    }elseif (strpos((string)$num,"3") !== false){
+        $num_list[] = $num;
+    }
 }
+foreach ($num_list as $val){
+    echo $val.",";
+}
+echo "<br/>";
+?>
+
+<?php
+$emp = ['中田' => ['age' => '23','pref' => '東京'], 
+    '山本' => ['age' => '19','pref' => '京都'], 
+    '佐藤' => ['age' => '30','pref' => '大阪'], 
+    '小林' => ['age' => '22','pref' => '福岡'] 
+];
+$emp_b =[];
+foreach ($emp as $name => $info) {
+    print ($key. ':'. $value);
+    echo "<br/>";
+}
+?>
