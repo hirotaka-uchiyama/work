@@ -9,17 +9,20 @@ for ($a = 1; $a <= 9; $a++) {
 ?>
 
 <?php
-$emp = ['中田' => ['age' => '23','pref' => '東京'], 
+$emp = ['中田' => ['age' => '23','pref' => '東京'],
     '山本' => ['age' => '19','pref' => '京都'], 
     '佐藤' => ['age' => '30','pref' => '大阪'], 
     '小林' => ['age' => '22','pref' => '福岡'] 
 ];
-$mep_a = [];
-foreach($emp as $key => $value) {
-    $emp_a[] = ['name' => $key, 'age' => $value['pref']];
+
+foreach ( $emp as $emp_d => $val ) {
+    echo 'name', ':', $emp_d;
+    echo "<br/>";
+    echo 'age', ':', $val['age'];
+    echo "<br/>";
+    echo 'pref', ':', $val['pref'];
+    echo "<br/>";
 }
-    print_r($emp_a);
-    echo "<br/>"
 ?>
 
 <?php
@@ -39,14 +42,17 @@ echo "<br/>";
 ?>
 
 <?php
-$emp = ['中田' => ['age' => '23','pref' => '東京'], 
+$emp = ['中田' => ['age' => '23','pref' => '東京'],
     '山本' => ['age' => '19','pref' => '京都'], 
     '佐藤' => ['age' => '30','pref' => '大阪'], 
     '小林' => ['age' => '22','pref' => '福岡'] 
 ];
-$emp_b =[];
-foreach ($emp as $name => $info) {
-    print ($key. ':'. $value);
+
+foreach ( $emp as $emp_d => $val ) {
+    echo 'name', ':', $emp_d;
+    echo "<br/>";
+    echo 'age', ':', $val['age'];
     echo "<br/>";
 }
+
 ?>
