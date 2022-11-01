@@ -18,7 +18,7 @@
     $age = $_POST['age'];
     echo $age;
     echo "<br/>";
-    $from = $_POST['form'];
+    $from = $_POST['from'];
     echo $from;
     echo "<br/>";
     if ($age >= 20) {
@@ -27,15 +27,12 @@
         echo '未成年です';
         echo "<br/>";
     }
-    
-    if (false !== strpos($from, '東京')) {
-    // $fromが東京であれば
-    echo '東京は日本の首都です';
-    }
-    if (false === strpos($from, '東京')) {
-    // $formが東京でない場合
-    echo $from;
-    echo 'は日本の首都ではありません';
+    $toukyou = "東京";
+
+    if (strpos($from,$toukyo) === false){
+        echo "東京は日本の首都です";
+    }else{
+        echo $from,"は日本の首都ではありません";
     }
     ?>
     <h1>フォーム</h1>
