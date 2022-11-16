@@ -27,9 +27,9 @@
         echo '未成年です';
         echo "<br/>";
     }
-    $toukyou = "東京";
+    $tokyo = "東京";
 
-    if (strpos($from,$toukyo) === false){
+    if ($from === $tokyo){
         echo "東京は日本の首都です";
     }else{
         echo $from,"は日本の首都ではありません";
