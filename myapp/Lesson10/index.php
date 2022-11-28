@@ -1,13 +1,24 @@
 <?php
-$file = "sample.json";
-$json = file_get_contents($file); //指定したファイルの要素をすべて取得する
-$user = json_decode($config_json, true);//json形式のデータを連想配列の形式にする
+// jsonファイルを読み込んで id と各都道府県名（short）を表⽰させる
+$json = "./sample.json";
+$file = file_get_contents($json);
+$file = mb_convert_encoding($file, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+$arr = json_decode($file, true);
 
-$user_data = array(
-            'id' => $user['id'],
-            'short' => $user['short']
-        );
+$result = [];
+foreach($arr[0] as $key => $val){
+    $str = "01";
+    echo "id". (int)$val["id"]. "は". $val["short"]. "<br>";
+}
 
-        echo $user_data_['id'];
-        echo $user_date['short'];
+//下記の形式の配列に値をセットして表⽰させる
+//[ "都道府県id" => [市町村名1, 市町村名2...], 
+foreach($arr[0] as $key => $val){
+    $arr = array();
+    foreach($val['city'] as $cities){
+        array_push($arr,$cities);
+    }
+    print_r($arr);
+}
+
 ?>
